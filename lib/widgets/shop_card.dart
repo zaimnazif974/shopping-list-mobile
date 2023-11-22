@@ -47,7 +47,7 @@ class ShopCard extends StatelessWidget {
           } else if (item.name == "Logout") {
 
             // final response = await request.logout("http://vincent-suhardi-tutorial.pbp.cs.ui.ac.id/auth/logout");
-            final response = await request.logout("http://localhost:8000/auth/logout"); // localhost
+            final response = await request.logout("http://localhost:8000/auth/logout/"); // localhost
 
             String message = response(["message"]);
             if (response['status']) {
@@ -58,7 +58,7 @@ class ShopCard extends StatelessWidget {
               ));
 
               // ignore: use_build_context_synchronously
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const LoginPage()),
               );
